@@ -4,11 +4,11 @@ fi
 source /etc/profile.d/autojump.zsh
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
-plugins=(git archlinux autojump nyan pip python tmux)
+plugins=(git archlinux autojump nyan pip python tmux git-extras)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.utf8
 export TERM=xterm-256color
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/usr/bin/site_perl:/usr/bin/core_perl:/home/brendan/.local/bin/"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/tools:/usr/bin/site_perl:/usr/bin/core_perl:/home/brendan/.local/bin/:/home/brendan/.gem/ruby/2.1.0/bin"
 [ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
 source /usr/bin/virtualenvwrapper.sh
 [ -s "/home/brendan/.nvm/nvm.sh" ] && . "/home/brendan/.nvm/nvm.sh" # This loads nvm
@@ -40,3 +40,7 @@ function gclobber()
 
 alias irc="ssh bpmoria2@linux1.acm.uiuc.edu -t '. /etc/profile; . 
 ~/.profile; screen -rd'"
+
+export WINTERFELL=107.170.36.85
+alias winterssh='ssh root@$WINTERFELL'
+
