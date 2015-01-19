@@ -10,6 +10,7 @@
 	c = commit
 	ci = commit -v
 	po = push origin
+	pu = pull origin
 	br = branch
 	co = checkout
 	a = add
