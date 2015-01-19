@@ -11,7 +11,7 @@ if [ -d $HOME/.oh-my-zsh ]
   then
     ZSH=$HOME/.oh-my-zsh
     ZSH_THEME="agnoster"
-    plugins=(git autojump nyan pip python tmux git-extras)
+    plugins=(git nyan pip python tmux git-extras)
     source $ZSH/oh-my-zsh.sh
 fi
 

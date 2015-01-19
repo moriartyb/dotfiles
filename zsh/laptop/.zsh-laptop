@@ -12,4 +12,4 @@ alias vpn_down='sudo systemctl stop pia@CA_Toronto'
 alias winet='sudo netctl start wlp3s0-IllinoisNet'
 alias lols='ls | $HOME/.gem/ruby/2.1.0/bin/lolcat'
 
-plugins+=( archlinux )
+plugins+=( archlinux autojump )
