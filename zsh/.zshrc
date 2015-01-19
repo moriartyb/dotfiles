@@ -39,3 +39,4 @@ function gclobber()
  git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch $CLOBBER_FILE' --prune-empty --tag-name-filter cat -- --all
 }
 
+if [ -f ~/.zsh-private ]; then source ~/.zsh-private; fi
