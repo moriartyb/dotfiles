@@ -1,0 +1,15 @@
+export LANG=en_US.utf8
+export TERM=xterm-256color
+
+[ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
+source /usr/bin/virtualenvwrapper.sh
+[ -s "/home/brendan/.nvm/nvm.sh" ] && . "/home/brendan/.nvm/nvm.sh" # This loads nvm
+export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+alias ilnet='sudo netctl start wlp3s0-IllinoisNet'
+alias rilnet='sudo netctl restart wlp3s0-IllinoisNet'
+alias vpn_up='sudo systemctl start pia@CA_Toronto'
+alias vpn_down='sudo systemctl stop pia@CA_Toronto'
+alias winet='sudo netctl start wlp3s0-IllinoisNet'
+alias lols='ls | $HOME/.gem/ruby/2.1.0/bin/lolcat'
+
+plugins+=( archlinux )
