@@ -2,6 +2,8 @@
 if [ -f /etc/fedora-release ]
   then
     source install-fedora
+fi
 if [ -f /etc/arch-release ]
   then
     source install-arch
+fi
