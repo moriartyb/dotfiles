@@ -30,3 +30,5 @@ function gclobber()
 }
 
 if [ -f $HOME/.zsh-private ]; then source $HOME/.zsh-private; fi
+
+alias drl='systemctl daemon-reload'
