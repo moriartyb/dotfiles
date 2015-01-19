@@ -7,10 +7,12 @@
 [credential]
 	helper = cache --timeout=3600
 [alias]
-	c = commit
+	c = commit -m
+	ca = commit -a -m 
 	ci = commit -v
 	po = push origin
 	pu = pull origin
+	m = master
 	br = branch
 	co = checkout
 	a = add
