@@ -9,7 +9,7 @@
 [alias]
 	c = commit
 	ci = commit -v
-	pr = push origin
+	po = push origin
 	br = branch
 	co = checkout
 	a = add
