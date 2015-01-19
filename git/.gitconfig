@@ -1,0 +1,15 @@
+[brendan]
+	email = bpmoria2@illinois.edu
+	name = Brendan Moriarty
+[user]
+	email = brendan@moriarty.io
+	name = Brendan Moriarty
+[credential]
+	helper = cache --timeout=3600
+[alias]
+	c = commit
+	ci = commit -v
+	pr = push origin
+	br = branch
+	co = checkout
+	a = add
