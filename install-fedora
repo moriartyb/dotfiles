@@ -1,5 +1,5 @@
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-yum install -y zsh autojump
+yum install -y zsh autojump vim
 curl -O https://raw.githubusercontent.com/joelthelion/autojump/master/bin/autojump.zsh
 mv autojump.zsh /etc/profile.d/
 chsh -s /bin/zsh
