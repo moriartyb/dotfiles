@@ -1,5 +1,6 @@
 export LANG=en_US.utf8
-export TERM=xterm-256color
+# according to arch wiki, the terminal itself should set the TERM variable
+#export TERM=xterm-256color
 
 #[ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
 [ -f /usr/bin/virtualenvwrapper.sh ] && source /usr/bin/virtualenvwrapper.sh
