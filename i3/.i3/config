@@ -198,3 +198,15 @@ for_window [class="XTerm"] floating enable
 #bindsym control+Print exec upim
 
 bindsym $mod+BackSpace exec i3lock
+
+
+
+# Startup execution files
+# to-do make unit files for these
+exec --no-startup-id systemctl --user start pa-applet
+
+# this is due to cbatticon being a symlink so systemctl enable doesn't work.
+exec --no-startup-id systemctl --user start cbatticon
+
+
+exec --no-startup-id nm-applet

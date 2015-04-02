@@ -1,0 +1,7 @@
+[Unit]
+Description=PulseAudio System Tray
+[Service]
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/pa-applet
+[Install]
+WantedBy=multi-user.target

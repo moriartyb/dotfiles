@@ -1,0 +1,10 @@
+[Unit]
+Description=CBatticon Service File
+
+
+[Service]
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/cbatticon -u 20 -i notification -c "pm-hibernate" -l 15 -r 3
+
+[Install]
+WantedBy=multi-user.target

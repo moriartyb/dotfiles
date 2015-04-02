@@ -67,3 +67,6 @@ function wotd()
   client = swagger.ApiClient(os.environ['WORDNIK_API_KEY'], 'http://api.wordnik.com/v4');words_api = WordsApi.WordsApi(client);\
   wotd=words_api.getWordOfTheDay();print 'Word of the Day:\n{0}\n-----------\n{1}\n\nExample:{2} '.format(wotd.word,wotd.definitions[0].text,wotd.examples[0].text)"
 }
+
+alias nmilnet='nmcli c up IllinoisNet'
+alias nmrilnet='nmcli c down IllinoisNet;nmcli c up IllinoisNet;'

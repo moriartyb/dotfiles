@@ -1,0 +1,7 @@
+[Unit]
+Description=Network Manager System Tray
+[Service]
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/nm-applet
+[Install]
+WantedBy=multi-user.target
