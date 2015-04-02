@@ -35,3 +35,32 @@ alias drl='systemctl daemon-reload'
 
 alias gpom='git push origin master'
 alias gpum='git pull origin master'
+
+PATH="/home/brendan/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="/home/brendan/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/brendan/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/brendan/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/brendan/perl5"; export PERL_MM_OPT;
+# searches the full text of the man pages"
+alias mans="man -K"
+
+
+# alias for mdb, microchip's command line debugger:
+alias mdb="/opt/microchip/mplabx/mplab_ide/bin/mdb.sh"
+
+
+# usage: gpdfmerge in1.pdf in2.pdf out.pdf
+function gpdfmerge()
+{
+  (( length = $# - 1 ))
+  GPDF_INPUT=(${@:1:$length})
+  # echo $($GPDF_INPUT)
+  gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=${@: -1} $GPDF_INPUT
+}
+
+function wotd()
+{
+  python2 -c "from wordnik import *;import os;\
+  client = swagger.ApiClient(os.environ['WORDNIK_API_KEY'], 'http://api.wordnik.com/v4');words_api = WordsApi.WordsApi(client);\
+  wotd=words_api.getWordOfTheDay();print 'Word of the Day:\n{0}\n-----------\n{1}\n\nExample:{2} '.format(wotd.word,wotd.definitions[0].text,wotd.examples[0].text)"
+}
