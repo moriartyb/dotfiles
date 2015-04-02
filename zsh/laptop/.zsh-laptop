@@ -1,8 +1,9 @@
 export LANG=en_US.utf8
-export TERM=xterm-256color
+# according to arch wiki, the terminal itself should set the TERM variable
+#export TERM=xterm-256color
 
-[ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
-source /usr/bin/virtualenvwrapper.sh
+#[ -n "$XTERM_VERSION" ] && transset-df -a >/dev/null
+[ -f /usr/bin/virtualenvwrapper.sh ] && source /usr/bin/virtualenvwrapper.sh
 [ -s "/home/brendan/.nvm/nvm.sh" ] && . "/home/brendan/.nvm/nvm.sh" # This loads nvm
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 alias ilnet='sudo netctl start wlp3s0-IllinoisNet'
@@ -13,7 +14,6 @@ alias winet='sudo netctl start wlp3s0-IllinoisNet'
 alias lols='ls | $HOME/.gem/ruby/2.1.0/bin/lolcat'
 
 plugins+=( archlinux autojump )
-
 
 # Pacman aliases
 alias pacupg='sudo pacman -Syu'		# Synchronize with repositories and then upgrade packages that are out of date on the local system.
@@ -41,3 +41,5 @@ alias pacmir='sudo pacman -Syy'                    # Force refresh of all packag
 # Silent installation
 alias pacforce='yes | sudo pacman -Su'             # Force installation by answer yes on [y/N]
 alias pacnoq="pacman -Syu --noconfirm"             # No questions will be asked but will not continue to do upgrade only if [y/N] will need to be asked for replacing of conflicted packages
+alias pacman-history='tac /var/log/pacman.log | grep "\[ALPM\] installed" | awk '"'"'{print $1, $2, $5, $6}'"'"''
+alias pachistmin='tac /var/log/pacman.log | grep "\[ALPM\] installed" | awk '"'"'{print $5 }'"'"''

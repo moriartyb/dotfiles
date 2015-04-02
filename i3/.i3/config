@@ -185,14 +185,16 @@ colors {
 
 
 #FLOAT SETTINGS
+# use xprop to find the WM_CLASS value.
+
 #for_window [class="Thunar"] floating enable
 #for_window [class="GIMP"] floating enable
 for_window [class="Eagle"] floating enable
 for_window [class="Anki"] floating enable
 for_window [class="qemu-system-i386"] floating enable
-
+for_window [class="qemu-system-i386"] floating enable
+for_window [class="XTerm"] floating enable
 #EXTRA BINDINGS
 #bindsym control+Print exec upim
-	
-#exec xcompmgr &
-#exec conky &
+
+bindsym $mod+BackSpace exec i3lock

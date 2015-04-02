@@ -1,10 +1,10 @@
 XTerm*metaSendsEscape: true
-!XTerm*locale: true
-!xterm*termName: xterm-256color
-!Xft.antialias:  true
-!Xft.rgba:       rgb
-!Xft.hinting:    true
-!Xft.hintstyle:  hintslight
+XTerm*locale: true
+xterm*termName: xterm-256color
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
 
 xterm*VT100.geometry:     80x25
 xterm*faceName:           Inconsolata for Powerline:style=Medium:size=12:antialias=true
