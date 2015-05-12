@@ -13,8 +13,8 @@ fi
 if [ -d $HOME/.oh-my-zsh ]
   then
     ZSH=$HOME/.oh-my-zsh
-    ZSH_THEME="agnoster"
-    plugins=(git nyan pip python tmux git-extras)
+    ZSH_THEME="bullet-train"
+    plugins=(git nyan pip python tmux git-extras zsh-syntax-highlighting)
     source $ZSH/oh-my-zsh.sh
 fi
 
@@ -53,12 +53,25 @@ alias mdb="/opt/microchip/mplabx/mplab_ide/bin/mdb.sh"
 
 
 # usage: gpdfmerge in1.pdf in2.pdf out.pdf
+# PDF STUFF
 function gpdfmerge()
 {
   (( length = $# - 1 ))
   GPDF_INPUT=(${@:1:$length})
   # echo $($GPDF_INPUT)
   gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=${@: -1} $GPDF_INPUT
+}
+
+# requires pdftk from AUR
+function pdfappendblank()
+{
+  if [ $# -ne 3 ]
+then
+  echo "Usage example: pdfappendblank 5 src.pdf res.pdf"
+  exit $E_BADARGS
+else
+  pdftk A=$2 B=blank.pdf cat A1-$(($1-1)) B1 A$1-end output $3
+fi
 }
 
 function wotd()
@@ -70,3 +83,4 @@ function wotd()
 
 alias nmilnet='nmcli c up IllinoisNet'
 alias nmrilnet='nmcli c down IllinoisNet;nmcli c up IllinoisNet;'
+alias ppt2pdf='libreoffice --headless --invisible --convert-to pdf '
