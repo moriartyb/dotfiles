@@ -31,12 +31,12 @@ bindsym $mod+Return exec xterm -en utf8
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -p ""'
+#bindsym $mod+q exec --no-startup-id rofi -dmenu
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -194,6 +194,8 @@ for_window [class="Anki"] floating enable
 for_window [class="qemu-system-i386"] floating enable
 for_window [class="qemu-system-i386"] floating enable
 for_window [class="XTerm"] floating enable
+for_window [class="Tracker-needle"] floating enable
+
 #EXTRA BINDINGS
 #bindsym control+Print exec upim
 
@@ -209,4 +211,9 @@ exec --no-startup-id systemctl --user start pa-applet
 exec --no-startup-id systemctl --user start cbatticon
 
 
-exec --no-startup-id nm-applet
+exec --no-startup-id systemctl --user start nm-applet
+bindsym $mod+Tab exec rofi -i3 -now -fg "#9f9f9f" -bg "#2c2c2e" -hlfg "#2c2c2e" -hlbg "#ccdc90" -o 85
+
+
+#exec --no-startup-id rofi $(i3-color-rofi)
+bindsym $mod+shift+f exec --no-startup-id tracker-needle
