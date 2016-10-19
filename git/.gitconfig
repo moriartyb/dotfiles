@@ -16,3 +16,4 @@
 	br = branch
 	co = checkout
 	a = add
+	st = status
